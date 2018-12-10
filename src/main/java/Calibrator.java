@@ -13,15 +13,14 @@ class Calibrator {
         Set<Integer> frequenciesToCompare = new HashSet<>();
 
         while (result[1] == 0) {
-            for (int i = 0; i < frequencyChanges.size(); i++) { // foreach
-                int number = Integer.parseInt(frequencyChanges.get(i));
+            for (String freq : frequencyChanges) {
+                int number = Integer.parseInt(freq);
 
                 result[0] += number;
 
                 if (frequenciesToCompare.contains(result[0])) {
                     result[1] = result[0];
-                    i = frequencyChanges.size();
-                    //break;
+                    break;
                 }
 
                 frequenciesToCompare.add(result[0]);
